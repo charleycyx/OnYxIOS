@@ -15,6 +15,7 @@
 
 @interface ViewController () <MKMapViewDelegate,CLLocationManagerDelegate,PBPebbleCentralDelegate> {
     bool centered;
+    int wayPointIndex;
 }
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
@@ -25,9 +26,12 @@
 
 
 @property (weak, nonatomic) AppDelegate *appDel;
-//this is supposed to be a array of hotel annotations
+//these are supposed to be a array of annotations
 @property (strong, nonatomic) NSMutableArray *hotelArray;
 @property (strong, nonatomic) NSMutableArray *cornellArray;
+@property (strong, nonatomic) NSMutableArray *hosptArray;
+@property (strong, nonatomic) NSMutableArray *searchArray;
+@property (strong, nonatomic) NSMutableArray *waypointArray;
 
 @property (strong, nonatomic) MyAnnotation *pinAnnot;
 
@@ -134,8 +138,11 @@
 #pragma mark Button Clicks
 
 - (IBAction)hotelButtonClicked:(id)sender {
+    
+    [self clearAnnotations];
+    
     /////////////////////////////////
-    //request and get data into a dictionary
+    //request and get data into a array
     ////////////////////////////////
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/priceline/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude]]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -151,9 +158,9 @@
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                         NSError *error;
-                                                        NSArray *hotelJsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-                                                        NSLog(@"%@",hotelJsonArray);
-                                                        [self fillArray:self.hotelArray WithJsonArray:hotelJsonArray];
+                                                        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@"%@",jsonArray);
+                                                        [self fillArray:self.hotelArray WithJsonArray:jsonArray];
                                                         [self dropPin:self.hotelArray];
                                                     }
                                                 }];
@@ -161,8 +168,10 @@
 }
 - (IBAction)cornellButtonClicked:(id)sender {
     
+    [self clearAnnotations];
+    
     /////////////////////////////////
-    //request and get data into a dictionary
+    //request and get data into a array
     ////////////////////////////////
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"http://onyxbackend.mybluemix.net/cornell"]
                                                            cachePolicy:NSURLRequestUseProtocolCachePolicy
@@ -178,9 +187,9 @@
                                                         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
                                                         NSLog(@"%@", httpResponse);
                                                         NSError *error;
-                                                        NSArray *hotelJsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
-                                                        NSLog(@"%@",hotelJsonArray);
-                                                        [self fillArray:self.cornellArray WithJsonArray:hotelJsonArray];
+                                                        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@"%@",jsonArray);
+                                                        [self fillArray:self.cornellArray WithJsonArray:jsonArray];
                                                         [self dropPin:self.cornellArray];
                                                     }
                                                 }];
@@ -188,6 +197,34 @@
     
 }
 - (IBAction)hospitalButtonClicked:(id)sender {
+    
+    [self clearAnnotations];
+    
+    /////////////////////////////////
+    //request and get data into a array
+    ////////////////////////////////
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/hospital/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        NSError *error;
+                                                        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@"%@",jsonArray);
+                                                        [self fillArray:self.hosptArray WithJsonArray:jsonArray];
+                                                        [self dropPin:self.hosptArray];
+                                                    }
+                                                }];
+    [dataTask resume];
+    
 }
 - (IBAction)searchButtonClicked:(id)sender {
 }
@@ -207,6 +244,23 @@
         an.title = dic[@"Name"];
         [arrayToFill addObject:an];
     }
+}
+
+-(void)clearAnnotations {
+    
+    //remove all annotations
+    [self.map removeAnnotations:self.hotelArray];
+    [self.map removeAnnotations:self.cornellArray];
+    [self.map removeAnnotations:self.hosptArray];
+    [self.map removeAnnotations:self.searchArray];
+    [self.map removeAnnotations:self.waypointArray];
+    
+    //dealloc all annotation
+    self.hosptArray = [[NSMutableArray alloc]init];
+    self.hotelArray = [[NSMutableArray alloc]init];
+    self.cornellArray = [[NSMutableArray alloc]init];
+    self.searchArray = [[NSMutableArray alloc]init];
+    self.waypointArray = [[NSMutableArray alloc]init];
 }
 
 @end
