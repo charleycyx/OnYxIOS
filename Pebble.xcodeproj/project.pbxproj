@@ -1,0 +1,519 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		55D092EE1BAD0DDA001156FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092ED1BAD0DDA001156FC /* main.m */; };
+		55D092F11BAD0DDA001156FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092F01BAD0DDA001156FC /* AppDelegate.m */; };
+		55D092F41BAD0DDA001156FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092F31BAD0DDA001156FC /* ViewController.m */; };
+		55D092F71BAD0DDA001156FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D092F51BAD0DDA001156FC /* Main.storyboard */; };
+		55D092F91BAD0DDA001156FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55D092F81BAD0DDA001156FC /* Assets.xcassets */; };
+		55D092FC1BAD0DDA001156FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D092FA1BAD0DDA001156FC /* LaunchScreen.storyboard */; };
+		55D093071BAD0DDB001156FC /* PebbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D093061BAD0DDB001156FC /* PebbleTests.m */; };
+		55D093121BAD0DDB001156FC /* PebbleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D093111BAD0DDB001156FC /* PebbleUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		55D093031BAD0DDB001156FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55D092E11BAD0DDA001156FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55D092E81BAD0DDA001156FC;
+			remoteInfo = Pebble;
+		};
+		55D0930E1BAD0DDB001156FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 55D092E11BAD0DDA001156FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 55D092E81BAD0DDA001156FC;
+			remoteInfo = Pebble;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		55D092E91BAD0DDA001156FC /* Pebble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pebble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D092ED1BAD0DDA001156FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		55D092EF1BAD0DDA001156FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		55D092F01BAD0DDA001156FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		55D092F21BAD0DDA001156FC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		55D092F31BAD0DDA001156FC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		55D092F61BAD0DDA001156FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		55D092F81BAD0DDA001156FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		55D092FB1BAD0DDA001156FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		55D092FD1BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D093021BAD0DDB001156FC /* PebbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D093061BAD0DDB001156FC /* PebbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleTests.m; sourceTree = "<group>"; };
+		55D093081BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D093111BAD0DDB001156FC /* PebbleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleUITests.m; sourceTree = "<group>"; };
+		55D093131BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		55D092E61BAD0DDA001156FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D092FF1BAD0DDB001156FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D0930A1BAD0DDB001156FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		55D092E01BAD0DDA001156FC = {
+			isa = PBXGroup;
+			children = (
+				55D092EB1BAD0DDA001156FC /* Pebble */,
+				55D093051BAD0DDB001156FC /* PebbleTests */,
+				55D093101BAD0DDB001156FC /* PebbleUITests */,
+				55D092EA1BAD0DDA001156FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		55D092EA1BAD0DDA001156FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				55D092E91BAD0DDA001156FC /* Pebble.app */,
+				55D093021BAD0DDB001156FC /* PebbleTests.xctest */,
+				55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		55D092EB1BAD0DDA001156FC /* Pebble */ = {
+			isa = PBXGroup;
+			children = (
+				55D092EF1BAD0DDA001156FC /* AppDelegate.h */,
+				55D092F01BAD0DDA001156FC /* AppDelegate.m */,
+				55D092F21BAD0DDA001156FC /* ViewController.h */,
+				55D092F31BAD0DDA001156FC /* ViewController.m */,
+				55D092F51BAD0DDA001156FC /* Main.storyboard */,
+				55D092F81BAD0DDA001156FC /* Assets.xcassets */,
+				55D092FA1BAD0DDA001156FC /* LaunchScreen.storyboard */,
+				55D092FD1BAD0DDB001156FC /* Info.plist */,
+				55D092EC1BAD0DDA001156FC /* Supporting Files */,
+			);
+			path = Pebble;
+			sourceTree = "<group>";
+		};
+		55D092EC1BAD0DDA001156FC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				55D092ED1BAD0DDA001156FC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		55D093051BAD0DDB001156FC /* PebbleTests */ = {
+			isa = PBXGroup;
+			children = (
+				55D093061BAD0DDB001156FC /* PebbleTests.m */,
+				55D093081BAD0DDB001156FC /* Info.plist */,
+			);
+			path = PebbleTests;
+			sourceTree = "<group>";
+		};
+		55D093101BAD0DDB001156FC /* PebbleUITests */ = {
+			isa = PBXGroup;
+			children = (
+				55D093111BAD0DDB001156FC /* PebbleUITests.m */,
+				55D093131BAD0DDB001156FC /* Info.plist */,
+			);
+			path = PebbleUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		55D092E81BAD0DDA001156FC /* Pebble */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "Pebble" */;
+			buildPhases = (
+				55D092E51BAD0DDA001156FC /* Sources */,
+				55D092E61BAD0DDA001156FC /* Frameworks */,
+				55D092E71BAD0DDA001156FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pebble;
+			productName = Pebble;
+			productReference = 55D092E91BAD0DDA001156FC /* Pebble.app */;
+			productType = "com.apple.product-type.application";
+		};
+		55D093011BAD0DDB001156FC /* PebbleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */;
+			buildPhases = (
+				55D092FE1BAD0DDB001156FC /* Sources */,
+				55D092FF1BAD0DDB001156FC /* Frameworks */,
+				55D093001BAD0DDB001156FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55D093041BAD0DDB001156FC /* PBXTargetDependency */,
+			);
+			name = PebbleTests;
+			productName = PebbleTests;
+			productReference = 55D093021BAD0DDB001156FC /* PebbleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		55D0930C1BAD0DDB001156FC /* PebbleUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */;
+			buildPhases = (
+				55D093091BAD0DDB001156FC /* Sources */,
+				55D0930A1BAD0DDB001156FC /* Frameworks */,
+				55D0930B1BAD0DDB001156FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				55D0930F1BAD0DDB001156FC /* PBXTargetDependency */,
+			);
+			name = PebbleUITests;
+			productName = PebbleUITests;
+			productReference = 55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		55D092E11BAD0DDA001156FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Charley Chen";
+				TargetAttributes = {
+					55D092E81BAD0DDA001156FC = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					55D093011BAD0DDB001156FC = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 55D092E81BAD0DDA001156FC;
+					};
+					55D0930C1BAD0DDB001156FC = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 55D092E81BAD0DDA001156FC;
+					};
+				};
+			};
+			buildConfigurationList = 55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "Pebble" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 55D092E01BAD0DDA001156FC;
+			productRefGroup = 55D092EA1BAD0DDA001156FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				55D092E81BAD0DDA001156FC /* Pebble */,
+				55D093011BAD0DDB001156FC /* PebbleTests */,
+				55D0930C1BAD0DDB001156FC /* PebbleUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		55D092E71BAD0DDA001156FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D092FC1BAD0DDA001156FC /* LaunchScreen.storyboard in Resources */,
+				55D092F91BAD0DDA001156FC /* Assets.xcassets in Resources */,
+				55D092F71BAD0DDA001156FC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D093001BAD0DDB001156FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D0930B1BAD0DDB001156FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		55D092E51BAD0DDA001156FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D092F41BAD0DDA001156FC /* ViewController.m in Sources */,
+				55D092F11BAD0DDA001156FC /* AppDelegate.m in Sources */,
+				55D092EE1BAD0DDA001156FC /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D092FE1BAD0DDB001156FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D093071BAD0DDB001156FC /* PebbleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		55D093091BAD0DDB001156FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55D093121BAD0DDB001156FC /* PebbleUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		55D093041BAD0DDB001156FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55D092E81BAD0DDA001156FC /* Pebble */;
+			targetProxy = 55D093031BAD0DDB001156FC /* PBXContainerItemProxy */;
+		};
+		55D0930F1BAD0DDB001156FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 55D092E81BAD0DDA001156FC /* Pebble */;
+			targetProxy = 55D0930E1BAD0DDB001156FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		55D092F51BAD0DDA001156FC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55D092F61BAD0DDA001156FC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		55D092FA1BAD0DDA001156FC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				55D092FB1BAD0DDA001156FC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		55D093141BAD0DDB001156FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		55D093151BAD0DDB001156FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		55D093171BAD0DDB001156FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pebble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.Pebble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		55D093181BAD0DDB001156FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pebble/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.Pebble;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		55D0931A1BAD0DDB001156FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PebbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebble.app/Pebble";
+			};
+			name = Debug;
+		};
+		55D0931B1BAD0DDB001156FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PebbleTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebble.app/Pebble";
+			};
+			name = Release;
+		};
+		55D0931D1BAD0DDB001156FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PebbleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pebble;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		55D0931E1BAD0DDB001156FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PebbleUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pebble;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "Pebble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D093141BAD0DDB001156FC /* Debug */,
+				55D093151BAD0DDB001156FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "Pebble" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D093171BAD0DDB001156FC /* Debug */,
+				55D093181BAD0DDB001156FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D0931A1BAD0DDB001156FC /* Debug */,
+				55D0931B1BAD0DDB001156FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				55D0931D1BAD0DDB001156FC /* Debug */,
+				55D0931E1BAD0DDB001156FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 55D092E11BAD0DDA001156FC /* Project object */;
+}
