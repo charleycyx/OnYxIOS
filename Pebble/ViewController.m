@@ -61,14 +61,14 @@
         CGPoint point = [recog locationInView:recog.view];
         
         //make or update annotation
-        if (!self.annot) {
-            _annot =  [[MyAnnotation alloc] initWithCoordinate:[self.map convertPoint:point toCoordinateFromView:self.map]];
-            [self.map addAnnotation:self.annot];
+        if (!self.appDel.annot) {
+            self.appDel.annot =  [[MyAnnotation alloc] initWithCoordinate:[self.map convertPoint:point toCoordinateFromView:self.map]];
+            [self.map addAnnotation:self.appDel.annot];
         } else {
-            self.annot.coordinate = [self.map convertPoint:point toCoordinateFromView:self.map];
+            self.appDel.annot.coordinate = [self.map convertPoint:point toCoordinateFromView:self.map];
         }
         
-        [self.appDel sendLocationInfoFromVC];
+        [self.appDel sendLocationInfo];
     }
 }
 

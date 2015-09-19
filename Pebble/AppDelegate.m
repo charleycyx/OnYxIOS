@@ -13,7 +13,9 @@
 #import <PebbleKit/PebbleKit.h>
 #import <MapKit/MapKit.h>
 
-@interface AppDelegate () <CLLocationManagerDelegate,PBPebbleCentralDelegate>
+@interface AppDelegate () <CLLocationManagerDelegate,PBPebbleCentralDelegate> {
+    CLLocationCoordinate2D coor;
+}
 
 @property (strong, nonatomic) CLLocationManager *locManager;
 
@@ -52,6 +54,8 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    if (self.vc)
+        coor = self.annot.coordinate;
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
@@ -66,28 +70,26 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
--(void) sendLocationInfoFromVC {
+-(void) sendLocationInfo {
     
-    if (self.vc) {
-        //get the angle
-        double dx = self.vc.annot.coordinate.longitude - self.location.coordinate.longitude;
-        double dy = self.vc.annot.coordinate.latitude - self.location.coordinate.latitude;
-        int angle = (int)atan2(dx, dy)/3.14*180;
-        if (angle<0) {
-            angle = 360+angle;
-        }
-        int distance = (int)[self.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.vc.annot.coordinate.latitude longitude:self.vc.annot.coordinate.longitude]];
-        
-        //send
-        [self.connectedWatch appMessagesPushUpdate:@{@0:[NSNumber numberWithInt:angle], @1:[NSNumber numberWithInt:distance]} onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
-            if (!error) {
-                NSLog(@"Successfully sent message.");
-            }
-            else {
-                NSLog(@"Error sending message: %@", error);
-            }
-        }];
+    //get the angle
+    double dx = self.annot.coordinate.longitude - self.location.coordinate.longitude;
+    double dy = self.annot.coordinate.latitude - self.location.coordinate.latitude;
+    int angle = (int)atan2(dx, dy)/3.14*180;
+    if (angle<0) {
+        angle = 360+angle;
     }
+    int distance = (int)[self.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.annot.coordinate.latitude longitude:self.annot.coordinate.longitude]];
+    
+    //send
+    [self.connectedWatch appMessagesPushUpdate:@{@0:[NSNumber numberWithInt:angle], @1:[NSNumber numberWithInt:distance]} onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully sent message.");
+        }
+        else {
+            NSLog(@"Error sending message: %@", error);
+        }
+    }];
     
 }
 
@@ -98,8 +100,8 @@
     _location = locations.lastObject;
     if (self.vc) {
         [self.vc locationUpdatedTo:manager.location];
-        [self sendLocationInfoFromVC];
     }
+    [self sendLocationInfo];
 }
 
 -(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {

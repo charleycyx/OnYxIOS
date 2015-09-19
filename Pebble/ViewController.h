@@ -13,8 +13,6 @@
 
 @interface ViewController : UIViewController
 
-@property (strong, nonatomic) MyAnnotation *annot;
-
 -(void)locationUpdatedTo:(CLLocation*)newLocation;
 
 @end
