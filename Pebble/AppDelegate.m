@@ -7,10 +7,14 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 #import <PebbleKit/PebbleKit.h>
+#import <MapKit/MapKit.h>
 
-@interface AppDelegate ()
+@interface AppDelegate () <CLLocationManagerDelegate>
+
+@property (strong, nonatomic) CLLocationManager *locManager;
 
 @end
 
@@ -19,6 +23,13 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //set up location manager
+    _locManager = [[CLLocationManager alloc]init];
+    [_locManager requestAlwaysAuthorization];
+    _locManager.desiredAccuracy = kCLLocationAccuracyBest;
+    _locManager.delegate = self;
+    [_locManager startUpdatingLocation];
     
     return YES;
 }
@@ -43,6 +54,20 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma CLLocationManager
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+    //update location and set the map region centered there
+    _location = locations.lastObject;
+    if (self.vc) {
+        [self.vc locationUpdatedTo:manager.location];
+    }
+}
+
+-(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+    NSLog(@"didFailWithError: %@", error);
 }
 
 @end

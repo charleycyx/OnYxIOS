@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class CLLocation;
+
 @interface ViewController : UIViewController
 
+-(void)locationUpdatedTo:(CLLocation*)newLocation;
 
 @end
 

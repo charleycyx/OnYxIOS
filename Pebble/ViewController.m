@@ -11,14 +11,14 @@
 #import <PebbleKit/PebbleKit.h>
 #import <MapKit/MapKit.h>
 #import "MyAnnotation.h"
+#import "AppDelegate.h"
 
 @interface ViewController () <MKMapViewDelegate,CLLocationManagerDelegate,PBPebbleCentralDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) MyAnnotation *annot;
-@property (strong, nonatomic) CLLocationManager *locManager;
-@property (strong, nonatomic) CLLocation *location;
 @property (strong, nonatomic) PBWatch *connectedWatch;
+@property (weak, nonatomic) AppDelegate *appDel;
 
 @end
 
@@ -36,18 +36,15 @@
     
     [[PBPebbleCentral defaultCentral] setAppUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
     
-    //set up location manager
-    _locManager = [[CLLocationManager alloc]init];
-    [_locManager requestAlwaysAuthorization];
-    _locManager.desiredAccuracy = kCLLocationAccuracyBest;
-    _locManager.delegate = self;
-    [_locManager startUpdatingLocation];
+    //get app delegate
+    _appDel = [UIApplication sharedApplication].delegate;
+    _appDel.vc = self;
     
     //configure map view
     self.map.delegate = self;
     UITapGestureRecognizer *tapRecg = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(mapTapped:)];
     [self.map addGestureRecognizer:tapRecg];
-    [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.location.coordinate,1000,1000)];
+    [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.appDel.location.coordinate,1000,1000)];
     
 }
 
@@ -56,18 +53,23 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void) sendAngle {
+-(void)finalize {
+    [super finalize];
+    self.appDel.vc = nil;
+}
+
+-(void) sendLocationInfo {
     //get the angle
-    double dx = self.annot.coordinate.longitude - self.location.coordinate.longitude;
-    double dy = self.annot.coordinate.latitude - self.location.coordinate.latitude;
-    double angle = atan2(dx, dy)/3.14*180;
+    double dx = self.annot.coordinate.longitude - self.appDel.location.coordinate.longitude;
+    double dy = self.annot.coordinate.latitude - self.appDel.location.coordinate.latitude;
+    int angle = (int)atan2(dx, dy)/3.14*180;
     if (angle<0) {
         angle = 360+angle;
     }
-    NSLog(@"%f",angle);
+    int distance = (int)[self.appDel.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.annot.coordinate.latitude longitude:self.annot.coordinate.longitude]];
     
     //send
-    [self.connectedWatch appMessagesPushUpdate:@{@0:[NSNumber numberWithDouble:angle]} onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+    [self.connectedWatch appMessagesPushUpdate:@{@0:[NSNumber numberWithInt:angle], @1:[NSNumber numberWithInt:distance]} onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
         if (!error) {
             NSLog(@"Successfully sent message.");
         }
@@ -78,17 +80,11 @@
     
 }
 
-#pragma CLLocationManager
+#pragma Location update
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
-    //update location and set the map region centered there
-    _location = locations.lastObject;
-    [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.location.coordinate,1000,1000)];
-    [self sendAngle];
-}
-
--(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"didFailWithError: %@", error);
+-(void)locationUpdatedTo:(CLLocation*)newLocation {
+    [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.appDel.location.coordinate,1000,1000)];
+    [self sendLocationInfo];
 }
 
 #pragma map stuff
@@ -106,7 +102,7 @@
             self.annot.coordinate = [self.map convertPoint:point toCoordinateFromView:self.map];
         }
         
-        [self sendAngle];
+        [self sendLocationInfo];
     }
 }
 

@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class CLLocation;
+@class ViewController;
+
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (strong, nonatomic) CLLocation *location;
+@property (weak, nonatomic) ViewController *vc;
 
 @end
 
