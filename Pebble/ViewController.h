@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @class CLLocation;
+@class MyAnnotation;
 
 @interface ViewController : UIViewController
+
+@property (strong, nonatomic) MyAnnotation *annot;
 
 -(void)locationUpdatedTo:(CLLocation*)newLocation;
 

@@ -10,12 +10,16 @@
 
 @class CLLocation;
 @class ViewController;
+@class PBWatch;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) CLLocation *location;
 @property (weak, nonatomic) ViewController *vc;
+@property (strong, nonatomic) PBWatch *connectedWatch;
+
+-(void) sendLocationInfoFromVC;
 
 @end
 

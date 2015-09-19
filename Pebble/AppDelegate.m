@@ -8,11 +8,12 @@
 
 #import "AppDelegate.h"
 #import "ViewController.h"
+#import "MyAnnotation.h"
 
 #import <PebbleKit/PebbleKit.h>
 #import <MapKit/MapKit.h>
 
-@interface AppDelegate () <CLLocationManagerDelegate>
+@interface AppDelegate () <CLLocationManagerDelegate,PBPebbleCentralDelegate>
 
 @property (strong, nonatomic) CLLocationManager *locManager;
 
@@ -30,6 +31,15 @@
     _locManager.desiredAccuracy = kCLLocationAccuracyBest;
     _locManager.delegate = self;
     [_locManager startUpdatingLocation];
+    
+    //set up pebble center
+    [[PBPebbleCentral defaultCentral] setDelegate:self];
+    
+    uuid_t myAppUUIDbytes;
+    NSUUID *myAppUUID = [[NSUUID alloc] initWithUUIDString:@"4d943355-7f44-4cf4-92cc-532334a19250"];
+    [myAppUUID getUUIDBytes:myAppUUIDbytes];
+    
+    [[PBPebbleCentral defaultCentral] setAppUUID:[NSData dataWithBytes:myAppUUIDbytes length:16]];
     
     return YES;
 }
@@ -56,6 +66,31 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+-(void) sendLocationInfoFromVC {
+    
+    if (self.vc) {
+        //get the angle
+        double dx = self.vc.annot.coordinate.longitude - self.location.coordinate.longitude;
+        double dy = self.vc.annot.coordinate.latitude - self.location.coordinate.latitude;
+        int angle = (int)atan2(dx, dy)/3.14*180;
+        if (angle<0) {
+            angle = 360+angle;
+        }
+        int distance = (int)[self.location distanceFromLocation:[[CLLocation alloc] initWithLatitude:self.vc.annot.coordinate.latitude longitude:self.vc.annot.coordinate.longitude]];
+        
+        //send
+        [self.connectedWatch appMessagesPushUpdate:@{@0:[NSNumber numberWithInt:angle], @1:[NSNumber numberWithInt:distance]} onSent:^(PBWatch *watch, NSDictionary *update, NSError *error) {
+            if (!error) {
+                NSLog(@"Successfully sent message.");
+            }
+            else {
+                NSLog(@"Error sending message: %@", error);
+            }
+        }];
+    }
+    
+}
+
 #pragma CLLocationManager
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
@@ -63,11 +98,43 @@
     _location = locations.lastObject;
     if (self.vc) {
         [self.vc locationUpdatedTo:manager.location];
+        [self sendLocationInfoFromVC];
     }
 }
 
 -(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError: %@", error);
+}
+
+#pragma pebble stuff
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidConnect:(PBWatch*)watch isNew:(BOOL)isNew {
+    NSLog(@"Pebble connected: %@", [watch name]);
+    self.connectedWatch = watch;
+    [self.connectedWatch appMessagesLaunch:^(PBWatch *watch, NSError *error) {
+        if (!error) {
+            NSLog(@"Successfully launched app.");
+        }
+        else {
+            NSLog(@"Error launching app - Error: %@", error);
+        }
+    }];
+    [self.connectedWatch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
+        if (isAppMessagesSupported) {
+            NSLog(@"This Pebble supports app message!");
+        }
+        else {
+            NSLog(@":( - This Pebble does not support app message!");
+        }
+    }];
+}
+
+- (void)pebbleCentral:(PBPebbleCentral*)central watchDidDisconnect:(PBWatch*)watch {
+    NSLog(@"Pebble disconnected: %@", [watch name]);
+    
+    if (self.connectedWatch == watch || [watch isEqual:self.connectedWatch]) {
+        self.connectedWatch = nil;
+    }
 }
 
 @end
