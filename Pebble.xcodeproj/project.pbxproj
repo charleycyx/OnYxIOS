@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2259436E18F457F921556739 /* libPods-PebbleTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AEE2A491A22274115B982A4 /* libPods-PebbleTests.a */; };
 		55D092EE1BAD0DDA001156FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092ED1BAD0DDA001156FC /* main.m */; };
 		55D092F11BAD0DDA001156FC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092F01BAD0DDA001156FC /* AppDelegate.m */; };
 		55D092F41BAD0DDA001156FC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D092F31BAD0DDA001156FC /* ViewController.m */; };
@@ -15,6 +16,8 @@
 		55D092FC1BAD0DDA001156FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55D092FA1BAD0DDA001156FC /* LaunchScreen.storyboard */; };
 		55D093071BAD0DDB001156FC /* PebbleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D093061BAD0DDB001156FC /* PebbleTests.m */; };
 		55D093121BAD0DDB001156FC /* PebbleUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 55D093111BAD0DDB001156FC /* PebbleUITests.m */; };
+		B038875CF8BAEF46808931BE /* libPods-Pebble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B15A8DC93BF6C32D07D111 /* libPods-Pebble.a */; };
+		B451BEB9A3D5007AFEF34A9D /* libPods-PebbleUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA096F1920CABDE172E34940 /* libPods-PebbleUITests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		02B15A8DC93BF6C32D07D111 /* libPods-Pebble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pebble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0FC71E4D8780CDFE6EC0C30A /* Pods-Pebble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pebble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pebble/Pods-Pebble.release.xcconfig"; sourceTree = "<group>"; };
+		365C82D65E51C8B72226180E /* Pods-Pebble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pebble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pebble/Pods-Pebble.debug.xcconfig"; sourceTree = "<group>"; };
 		55D092E91BAD0DDA001156FC /* Pebble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pebble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D092ED1BAD0DDA001156FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D092EF1BAD0DDA001156FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +57,12 @@
 		55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D093111BAD0DDB001156FC /* PebbleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleUITests.m; sourceTree = "<group>"; };
 		55D093131BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96B23CE80B6B758B8873231E /* Pods-PebbleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleUITests/Pods-PebbleUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9AEE2A491A22274115B982A4 /* libPods-PebbleTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PebbleTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8361361D8EC8E3A08D33651 /* Pods-PebbleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleTests/Pods-PebbleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C6917089912A1AFDCE9BBB6E /* Pods-PebbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleTests/Pods-PebbleTests.release.xcconfig"; sourceTree = "<group>"; };
+		DD750E0E81778C4DEC4A3E09 /* Pods-PebbleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PebbleUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PebbleUITests/Pods-PebbleUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FA096F1920CABDE172E34940 /* libPods-PebbleUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PebbleUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B038875CF8BAEF46808931BE /* libPods-Pebble.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2259436E18F457F921556739 /* libPods-PebbleTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B451BEB9A3D5007AFEF34A9D /* libPods-PebbleUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F8AB429834D9A61DC733989 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02B15A8DC93BF6C32D07D111 /* libPods-Pebble.a */,
+				9AEE2A491A22274115B982A4 /* libPods-PebbleTests.a */,
+				FA096F1920CABDE172E34940 /* libPods-PebbleUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		55D092E01BAD0DDA001156FC = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				55D093051BAD0DDB001156FC /* PebbleTests */,
 				55D093101BAD0DDB001156FC /* PebbleUITests */,
 				55D092EA1BAD0DDA001156FC /* Products */,
+				A548B7C152CC72E7528DA4AE /* Pods */,
+				2F8AB429834D9A61DC733989 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -140,6 +167,19 @@
 			path = PebbleUITests;
 			sourceTree = "<group>";
 		};
+		A548B7C152CC72E7528DA4AE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				365C82D65E51C8B72226180E /* Pods-Pebble.debug.xcconfig */,
+				0FC71E4D8780CDFE6EC0C30A /* Pods-Pebble.release.xcconfig */,
+				B8361361D8EC8E3A08D33651 /* Pods-PebbleTests.debug.xcconfig */,
+				C6917089912A1AFDCE9BBB6E /* Pods-PebbleTests.release.xcconfig */,
+				DD750E0E81778C4DEC4A3E09 /* Pods-PebbleUITests.debug.xcconfig */,
+				96B23CE80B6B758B8873231E /* Pods-PebbleUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "Pebble" */;
 			buildPhases = (
+				A1EE6445936F6ECF24D088F0 /* Check Pods Manifest.lock */,
 				55D092E51BAD0DDA001156FC /* Sources */,
 				55D092E61BAD0DDA001156FC /* Frameworks */,
 				55D092E71BAD0DDA001156FC /* Resources */,
+				3C7DE20179025B407B27605C /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,9 +206,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */;
 			buildPhases = (
+				F445A14FFA202441146262EB /* Check Pods Manifest.lock */,
 				55D092FE1BAD0DDB001156FC /* Sources */,
 				55D092FF1BAD0DDB001156FC /* Frameworks */,
 				55D093001BAD0DDB001156FC /* Resources */,
+				6DD77DA63ED43BC433BDFDE8 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,9 +226,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */;
 			buildPhases = (
+				DBE25D1FA4F78E52054F2D81 /* Check Pods Manifest.lock */,
 				55D093091BAD0DDB001156FC /* Sources */,
 				55D0930A1BAD0DDB001156FC /* Frameworks */,
 				55D0930B1BAD0DDB001156FC /* Resources */,
+				83CB182FDFA3348E207E4EFC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -264,6 +310,99 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C7DE20179025B407B27605C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pebble/Pods-Pebble-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DD77DA63ED43BC433BDFDE8 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PebbleTests/Pods-PebbleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83CB182FDFA3348E207E4EFC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PebbleUITests/Pods-PebbleUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1EE6445936F6ECF24D088F0 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DBE25D1FA4F78E52054F2D81 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F445A14FFA202441146262EB /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55D092E51BAD0DDA001156FC /* Sources */ = {
@@ -409,6 +548,7 @@
 		};
 		55D093171BAD0DDB001156FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 365C82D65E51C8B72226180E /* Pods-Pebble.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pebble/Info.plist;
@@ -420,6 +560,7 @@
 		};
 		55D093181BAD0DDB001156FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0FC71E4D8780CDFE6EC0C30A /* Pods-Pebble.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Pebble/Info.plist;
@@ -431,6 +572,7 @@
 		};
 		55D0931A1BAD0DDB001156FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B8361361D8EC8E3A08D33651 /* Pods-PebbleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PebbleTests/Info.plist;
@@ -443,6 +585,7 @@
 		};
 		55D0931B1BAD0DDB001156FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6917089912A1AFDCE9BBB6E /* Pods-PebbleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = PebbleTests/Info.plist;
@@ -455,6 +598,7 @@
 		};
 		55D0931D1BAD0DDB001156FC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD750E0E81778C4DEC4A3E09 /* Pods-PebbleUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PebbleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -467,6 +611,7 @@
 		};
 		55D0931E1BAD0DDB001156FC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 96B23CE80B6B758B8873231E /* Pods-PebbleUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = PebbleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -496,6 +641,7 @@
 				55D093181BAD0DDB001156FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +650,7 @@
 				55D0931B1BAD0DDB001156FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +659,7 @@
 				55D0931E1BAD0DDB001156FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
