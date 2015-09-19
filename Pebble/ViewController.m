@@ -15,6 +15,8 @@
 
 @interface ViewController () <MKMapViewDelegate,CLLocationManagerDelegate,PBPebbleCentralDelegate> {
     bool centered;
+    CGFloat upHeight;
+    CGFloat viewOriginalCenter;
     int wayPointIndex;
 }
 
@@ -58,8 +60,11 @@
     [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.appDel.location.coordinate,1000,1000)];
     self.map.showsUserLocation = YES;
     
-//    self.selfAnnot = [[MyAnnotation alloc]initWithCoordinate: self.appDel.location.coordinate];
-//    [self.map addAnnotation:self.selfAnnot];
+    //notification for keyboard push
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+    viewOriginalCenter = self.view.center.y;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -261,6 +266,32 @@
     self.cornellArray = [[NSMutableArray alloc]init];
     self.searchArray = [[NSMutableArray alloc]init];
     self.waypointArray = [[NSMutableArray alloc]init];
+}
+
+- (void)keyboardDidShow:(NSNotification *)note {
+    /* move your views here */
+    upHeight = [[note.userInfo objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size.height;
+    if (self.view.center.y == viewOriginalCenter)
+        [UIView animateWithDuration:0.4
+                              delay:0
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             self.view.center = CGPointMake(self.view.center.x,self.view.center.y-upHeight);
+                         }
+                         completion:nil];
+    
+}
+
+-(void)keyboardDidHide:(NSNotification *)note {
+    /* move your views here */
+    if (self.view.center.y < viewOriginalCenter)
+        [UIView animateWithDuration:0.4
+                              delay:0
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             self.view.center = CGPointMake(self.view.center.x,self.view.center.y+upHeight);
+                         }
+                         completion:nil];
 }
 
 @end
