@@ -20,6 +20,8 @@
 @property (strong, nonatomic) IBOutlet MKMapView *map;
 @property (strong, nonatomic) IBOutlet UIButton *hotelButton;
 @property (strong, nonatomic) IBOutlet UIButton *cornellButton;
+@property (strong, nonatomic) IBOutlet UITextField *textField;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
 
 
 @property (weak, nonatomic) AppDelegate *appDel;
@@ -87,9 +89,9 @@
         if (self.pinAnnot)
             [self.map removeAnnotation:self.pinAnnot];
         self.pinAnnot =  [[MyAnnotation alloc] initWithCoordinate:[self.map convertPoint:point toCoordinateFromView:self.map]];
+        self.pinAnnot.title = @"Custom Pin on the map";
         [self.map addAnnotation:self.pinAnnot];
 
-        
         //put this onto the appDel annotation
         self.appDel.annot = self.pinAnnot;
         [self.appDel sendLocationInfo];
@@ -123,8 +125,10 @@
 }
 
 - (void)mapView:(MKMapView *)mapView didSelectAnnotationView:(MKAnnotationView *)view {
-    self.appDel.annot = view.annotation;
-    [self.appDel sendLocationInfo];
+    if (!(self.map.userLocation==view.annotation)) {
+        self.appDel.annot = view.annotation;
+        [self.appDel sendLocationInfo];
+    }
 }
 
 #pragma mark Button Clicks
@@ -182,6 +186,12 @@
                                                 }];
     [dataTask resume];
     
+}
+- (IBAction)hospitalButtonClicked:(id)sender {
+}
+- (IBAction)searchButtonClicked:(id)sender {
+}
+- (IBAction)navigateButtonClicked:(id)sender {
 }
 
 //supposedly an array of MyAnnotation that should be dropped

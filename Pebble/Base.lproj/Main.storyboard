@@ -18,12 +18,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-0C-Moq">
-                                <rect key="frame" x="191" y="597" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dsv-0C-Moq">
+                                <rect key="frame" x="139" y="492" width="97" height="30"/>
                                 <color key="backgroundColor" red="0.54117647058823526" green="0.098039215686274508" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Ubk-tC-Cgk"/>
-                                </constraints>
                                 <state key="normal" title="Cornell">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -31,11 +28,11 @@
                                     <action selector="cornellButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pUV-K5-tsi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-ff-XjI">
-                                <rect key="frame" x="43" y="597" width="140" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5IR-ff-XjI">
+                                <rect key="frame" x="16" y="492" width="97" height="30"/>
                                 <color key="backgroundColor" red="0.1803921568627451" green="0.44313725490196076" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="70x-AE-zaN"/>
+                                    <constraint firstAttribute="height" constant="30" id="u03-s2-Yvq"/>
                                 </constraints>
                                 <state key="normal" title="Hotels">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,30 +41,94 @@
                                     <action selector="hotelButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2rf-9G-x3U"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-tV-KDr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="557"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tIT-tV-KDr">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="477"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-n9-2d3">
+                                <rect key="frame" x="262" y="492" width="97" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Hospital">
+                                    <color key="titleColor" red="0.87450980389999999" green="0.1529411765" blue="0.1647058824" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="hospitalButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fvD-g4-IlA"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HOZ-wm-oFR">
+                                <rect key="frame" x="12" y="542" width="228" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ebu-vP-r5a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TTj-ov-wZN">
+                                <rect key="frame" x="266" y="542" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.21568627450980393" green="0.21568627450980393" blue="0.21568627450980393" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="dxp-fY-fjK"/>
+                                </constraints>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="searchButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ysj-Mg-Pza"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BHI-uM-AEC">
+                                <rect key="frame" x="12" y="598" width="228" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nkO-qo-9gc">
+                                <rect key="frame" x="266" y="598" width="97" height="30"/>
+                                <color key="backgroundColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Navigate">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigateButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hqf-6q-15m"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tIT-tV-KDr" secondAttribute="bottom" constant="110" id="3Et-hH-Zys"/>
-                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="leading" secondItem="5IR-ff-XjI" secondAttribute="trailing" constant="8" id="GNx-lL-Jvg"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="5IR-ff-XjI" secondAttribute="bottom" constant="40" id="Qe7-S8-xRW"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dsv-0C-Moq" secondAttribute="bottom" constant="40" id="SHF-aq-EBM"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Dsv-0C-Moq" secondAttribute="trailing" constant="24" id="T7K-29-Y2S"/>
-                            <constraint firstItem="5IR-ff-XjI" firstAttribute="top" secondItem="tIT-tV-KDr" secondAttribute="bottom" constant="40" id="fdc-79-Cih"/>
-                            <constraint firstItem="5IR-ff-XjI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="23" id="gto-BB-Ltw"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dsv-0C-Moq" secondAttribute="bottom" constant="145" id="0IW-e4-Vry"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="height" secondItem="hWx-n9-2d3" secondAttribute="height" id="0pU-95-Stq"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="top" secondItem="hWx-n9-2d3" secondAttribute="top" id="2iu-Do-6KC"/>
+                            <constraint firstItem="BHI-uM-AEC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="5Zb-aB-gyo"/>
+                            <constraint firstItem="5IR-ff-XjI" firstAttribute="width" secondItem="Dsv-0C-Moq" secondAttribute="width" id="7yR-j0-rgn"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="top" secondItem="tIT-tV-KDr" secondAttribute="bottom" constant="15" id="D6T-TD-hku"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TTj-ov-wZN" secondAttribute="trailing" constant="-4" id="IBX-b5-1Te"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="top" secondItem="5IR-ff-XjI" secondAttribute="top" id="Mhx-li-Dvn"/>
+                            <constraint firstItem="TTj-ov-wZN" firstAttribute="top" secondItem="HOZ-wm-oFR" secondAttribute="top" id="Nc6-TZ-Vjt"/>
+                            <constraint firstItem="5IR-ff-XjI" firstAttribute="height" secondItem="Dsv-0C-Moq" secondAttribute="height" id="Q47-zJ-DWn"/>
+                            <constraint firstItem="TTj-ov-wZN" firstAttribute="leading" secondItem="HOZ-wm-oFR" secondAttribute="trailing" constant="26" id="QiF-46-9sf"/>
+                            <constraint firstItem="nkO-qo-9gc" firstAttribute="top" secondItem="BHI-uM-AEC" secondAttribute="top" id="Sad-LL-xaV"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="leading" secondItem="5IR-ff-XjI" secondAttribute="trailing" constant="26" id="StD-af-do2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hWx-n9-2d3" secondAttribute="trailing" id="YBk-d9-KlA"/>
+                            <constraint firstItem="nkO-qo-9gc" firstAttribute="leading" secondItem="BHI-uM-AEC" secondAttribute="trailing" constant="26" id="cNb-75-LQH"/>
+                            <constraint firstItem="nkO-qo-9gc" firstAttribute="leading" secondItem="TTj-ov-wZN" secondAttribute="leading" id="chZ-N4-aHi"/>
+                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="width" secondItem="hWx-n9-2d3" secondAttribute="width" id="eHe-an-Vje"/>
+                            <constraint firstItem="HOZ-wm-oFR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-4" id="hr1-JM-ndC"/>
+                            <constraint firstItem="HOZ-wm-oFR" firstAttribute="top" secondItem="5IR-ff-XjI" secondAttribute="bottom" constant="20" id="mae-KL-SPZ"/>
+                            <constraint firstItem="hWx-n9-2d3" firstAttribute="leading" secondItem="Dsv-0C-Moq" secondAttribute="trailing" constant="26" id="mxt-4Y-ZbU"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="5IR-ff-XjI" secondAttribute="leading" id="q1v-O6-Jt2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="tIT-tV-KDr" secondAttribute="trailing" constant="-20" id="sbs-50-UIr"/>
-                            <constraint firstItem="Dsv-0C-Moq" firstAttribute="top" secondItem="tIT-tV-KDr" secondAttribute="bottom" constant="40" id="srk-B5-h1d"/>
                             <constraint firstItem="tIT-tV-KDr" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="tjs-3M-9mc"/>
                             <constraint firstItem="tIT-tV-KDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="vIW-mc-lfD"/>
+                            <constraint firstItem="BHI-uM-AEC" firstAttribute="top" secondItem="HOZ-wm-oFR" secondAttribute="bottom" constant="26" id="weL-PM-ALK"/>
+                            <constraint firstItem="nkO-qo-9gc" firstAttribute="width" secondItem="TTj-ov-wZN" secondAttribute="width" id="zSZ-r2-DvS"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="cornellButton" destination="Dsv-0C-Moq" id="Whv-p4-qbf"/>
                         <outlet property="hotelButton" destination="5IR-ff-XjI" id="aGm-PV-3Qf"/>
+                        <outlet property="locationLabel" destination="BHI-uM-AEC" id="oil-c9-Agn"/>
                         <outlet property="map" destination="tIT-tV-KDr" id="xV7-XR-Eog"/>
+                        <outlet property="textField" destination="HOZ-wm-oFR" id="APV-2J-fuH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
