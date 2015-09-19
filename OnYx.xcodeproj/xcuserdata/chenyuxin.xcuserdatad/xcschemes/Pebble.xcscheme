@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55D092E81BAD0DDA001156FC"
-               BuildableName = "Pebble.app"
-               BlueprintName = "Pebble"
-               ReferencedContainer = "container:Pebble.xcodeproj">
+               BuildableName = "OnYx.app"
+               BlueprintName = "OnYx"
+               ReferencedContainer = "container:OnYx.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55D093011BAD0DDB001156FC"
-               BuildableName = "PebbleTests.xctest"
-               BlueprintName = "PebbleTests"
-               ReferencedContainer = "container:Pebble.xcodeproj">
+               BuildableName = "OnYx.xctest"
+               BlueprintName = "OnYxTests"
+               ReferencedContainer = "container:OnYx.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "55D0930C1BAD0DDB001156FC"
-               BuildableName = "PebbleUITests.xctest"
-               BlueprintName = "PebbleUITests"
-               ReferencedContainer = "container:Pebble.xcodeproj">
+               BuildableName = "OnYx.xctest"
+               BlueprintName = "OnYxUITests"
+               ReferencedContainer = "container:OnYx.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55D092E81BAD0DDA001156FC"
-            BuildableName = "Pebble.app"
-            BlueprintName = "Pebble"
-            ReferencedContainer = "container:Pebble.xcodeproj">
+            BuildableName = "OnYx.app"
+            BlueprintName = "OnYx"
+            ReferencedContainer = "container:OnYx.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55D092E81BAD0DDA001156FC"
-            BuildableName = "Pebble.app"
-            BlueprintName = "Pebble"
-            ReferencedContainer = "container:Pebble.xcodeproj">
+            BuildableName = "OnYx.app"
+            BlueprintName = "OnYx"
+            ReferencedContainer = "container:OnYx.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "55D092E81BAD0DDA001156FC"
-            BuildableName = "Pebble.app"
-            BlueprintName = "Pebble"
-            ReferencedContainer = "container:Pebble.xcodeproj">
+            BuildableName = "OnYx.app"
+            BlueprintName = "OnYx"
+            ReferencedContainer = "container:OnYx.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

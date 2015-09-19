@@ -42,7 +42,7 @@
 		02B15A8DC93BF6C32D07D111 /* libPods-Pebble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Pebble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FC71E4D8780CDFE6EC0C30A /* Pods-Pebble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pebble.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pebble/Pods-Pebble.release.xcconfig"; sourceTree = "<group>"; };
 		365C82D65E51C8B72226180E /* Pods-Pebble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pebble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pebble/Pods-Pebble.debug.xcconfig"; sourceTree = "<group>"; };
-		55D092E91BAD0DDA001156FC /* Pebble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pebble.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D092E91BAD0DDA001156FC /* OnYx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OnYx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D092ED1BAD0DDA001156FC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		55D092EF1BAD0DDA001156FC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		55D092F01BAD0DDA001156FC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -52,10 +52,10 @@
 		55D092F81BAD0DDA001156FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55D092FB1BAD0DDA001156FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55D092FD1BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55D093021BAD0DDB001156FC /* PebbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D093021BAD0DDB001156FC /* OnYx.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnYx.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D093061BAD0DDB001156FC /* PebbleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleTests.m; sourceTree = "<group>"; };
 		55D093081BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PebbleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		55D0930D1BAD0DDB001156FC /* OnYx.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OnYx.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55D093111BAD0DDB001156FC /* PebbleUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PebbleUITests.m; sourceTree = "<group>"; };
 		55D093131BAD0DDB001156FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55D0931F1BAD130D001156FC /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
@@ -121,9 +121,9 @@
 		55D092EA1BAD0DDA001156FC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				55D092E91BAD0DDA001156FC /* Pebble.app */,
-				55D093021BAD0DDB001156FC /* PebbleTests.xctest */,
-				55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */,
+				55D092E91BAD0DDA001156FC /* OnYx.app */,
+				55D093021BAD0DDB001156FC /* OnYx.xctest */,
+				55D0930D1BAD0DDB001156FC /* OnYx.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -188,9 +188,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		55D092E81BAD0DDA001156FC /* Pebble */ = {
+		55D092E81BAD0DDA001156FC /* OnYx */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "Pebble" */;
+			buildConfigurationList = 55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYx" */;
 			buildPhases = (
 				A1EE6445936F6ECF24D088F0 /* Check Pods Manifest.lock */,
 				55D092E51BAD0DDA001156FC /* Sources */,
@@ -202,14 +202,14 @@
 			);
 			dependencies = (
 			);
-			name = Pebble;
+			name = OnYx;
 			productName = Pebble;
-			productReference = 55D092E91BAD0DDA001156FC /* Pebble.app */;
+			productReference = 55D092E91BAD0DDA001156FC /* OnYx.app */;
 			productType = "com.apple.product-type.application";
 		};
-		55D093011BAD0DDB001156FC /* PebbleTests */ = {
+		55D093011BAD0DDB001156FC /* OnYxTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */;
+			buildConfigurationList = 55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYxTests" */;
 			buildPhases = (
 				F445A14FFA202441146262EB /* Check Pods Manifest.lock */,
 				55D092FE1BAD0DDB001156FC /* Sources */,
@@ -222,14 +222,14 @@
 			dependencies = (
 				55D093041BAD0DDB001156FC /* PBXTargetDependency */,
 			);
-			name = PebbleTests;
+			name = OnYxTests;
 			productName = PebbleTests;
-			productReference = 55D093021BAD0DDB001156FC /* PebbleTests.xctest */;
+			productReference = 55D093021BAD0DDB001156FC /* OnYx.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		55D0930C1BAD0DDB001156FC /* PebbleUITests */ = {
+		55D0930C1BAD0DDB001156FC /* OnYxUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */;
+			buildConfigurationList = 55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYxUITests" */;
 			buildPhases = (
 				DBE25D1FA4F78E52054F2D81 /* Check Pods Manifest.lock */,
 				55D093091BAD0DDB001156FC /* Sources */,
@@ -242,9 +242,9 @@
 			dependencies = (
 				55D0930F1BAD0DDB001156FC /* PBXTargetDependency */,
 			);
-			name = PebbleUITests;
+			name = OnYxUITests;
 			productName = PebbleUITests;
-			productReference = 55D0930D1BAD0DDB001156FC /* PebbleUITests.xctest */;
+			productReference = 55D0930D1BAD0DDB001156FC /* OnYx.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -269,7 +269,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "Pebble" */;
+			buildConfigurationList = 55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "OnYx" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -282,9 +282,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				55D092E81BAD0DDA001156FC /* Pebble */,
-				55D093011BAD0DDB001156FC /* PebbleTests */,
-				55D0930C1BAD0DDB001156FC /* PebbleUITests */,
+				55D092E81BAD0DDA001156FC /* OnYx */,
+				55D093011BAD0DDB001156FC /* OnYxTests */,
+				55D0930C1BAD0DDB001156FC /* OnYxUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,12 +442,12 @@
 /* Begin PBXTargetDependency section */
 		55D093041BAD0DDB001156FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 55D092E81BAD0DDA001156FC /* Pebble */;
+			target = 55D092E81BAD0DDA001156FC /* OnYx */;
 			targetProxy = 55D093031BAD0DDB001156FC /* PBXContainerItemProxy */;
 		};
 		55D0930F1BAD0DDB001156FC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 55D092E81BAD0DDA001156FC /* Pebble */;
+			target = 55D092E81BAD0DDA001156FC /* OnYx */;
 			targetProxy = 55D0930E1BAD0DDB001156FC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -562,7 +562,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.Pebble;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OnYx;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -577,7 +577,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.Pebble;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OnYx;
 				SDKROOT = iphoneos;
 			};
 			name = Release;
@@ -590,8 +590,8 @@
 				INFOPLIST_FILE = PebbleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebble.app/Pebble";
+				PRODUCT_NAME = OnYx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnYx.app/OnYx";
 			};
 			name = Debug;
 		};
@@ -603,8 +603,8 @@
 				INFOPLIST_FILE = PebbleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pebble.app/Pebble";
+				PRODUCT_NAME = OnYx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OnYx.app/OnYx";
 			};
 			name = Release;
 		};
@@ -615,7 +615,7 @@
 				INFOPLIST_FILE = PebbleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OnYx;
 				TEST_TARGET_NAME = Pebble;
 				USES_XCTRUNNER = YES;
 			};
@@ -628,7 +628,7 @@
 				INFOPLIST_FILE = PebbleUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = BRHack.PebbleUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = OnYx;
 				TEST_TARGET_NAME = Pebble;
 				USES_XCTRUNNER = YES;
 			};
@@ -637,7 +637,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "Pebble" */ = {
+		55D092E41BAD0DDA001156FC /* Build configuration list for PBXProject "OnYx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D093141BAD0DDB001156FC /* Debug */,
@@ -646,7 +646,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "Pebble" */ = {
+		55D093161BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYx" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D093171BAD0DDB001156FC /* Debug */,
@@ -655,7 +655,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleTests" */ = {
+		55D093191BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYxTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D0931A1BAD0DDB001156FC /* Debug */,
@@ -664,7 +664,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "PebbleUITests" */ = {
+		55D0931C1BAD0DDB001156FC /* Build configuration list for PBXNativeTarget "OnYxUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				55D0931D1BAD0DDB001156FC /* Debug */,
