@@ -13,7 +13,7 @@
 #import "MyAnnotation.h"
 #import "AppDelegate.h"
 
-@interface ViewController () <MKMapViewDelegate,CLLocationManagerDelegate,PBPebbleCentralDelegate> {
+@interface ViewController () <MKMapViewDelegate,CLLocationManagerDelegate,PBPebbleCentralDelegate,UITextFieldDelegate> {
     bool centered;
     CGFloat upHeight;
     CGFloat viewOriginalCenter;
@@ -59,6 +59,9 @@
     [self.map addGestureRecognizer:tapRecg];
     [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.appDel.location.coordinate,1000,1000)];
     self.map.showsUserLocation = YES;
+    
+    //text field delegation
+    self.textField.delegate = self;
     
     //notification for keyboard push
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardDidShowNotification object:nil];
@@ -232,6 +235,34 @@
     
 }
 - (IBAction)searchButtonClicked:(id)sender {
+    
+    [self clearAnnotations];
+    
+    /////////////////////////////////
+    //request and get data into a array
+    ////////////////////////////////
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/search/%@",[self.textField.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"]]]
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:10.0];
+    [request setHTTPMethod:@"GET"];
+    
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
+                                                completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+                                                    if (error) {
+                                                        NSLog(@"%@", error);
+                                                    } else {
+                                                        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+                                                        NSLog(@"%@", httpResponse);
+                                                        NSError *error;
+                                                        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+                                                        NSLog(@"%@",jsonArray);
+                                                        [self fillArray:self.searchArray WithJsonArray:jsonArray];
+                                                        [self dropPin:self.searchArray];
+                                                    }
+                                                }];
+    [dataTask resume];
+    
 }
 - (IBAction)navigateButtonClicked:(id)sender {
 }
@@ -293,5 +324,19 @@
                          }
                          completion:nil];
 }
+
+#pragma mark text field stuff
+
+-(BOOL) textFieldShouldBeginEditing:(UITextField *)textField {
+    textField.text = @"";
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    
+    return YES;
+}
+
 
 @end
