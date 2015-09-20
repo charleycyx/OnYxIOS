@@ -117,14 +117,18 @@
     
     MKPinAnnotationView *pinView = (MKPinAnnotationView*)[self.map dequeueReusableAnnotationViewWithIdentifier:@"DETAILPIN_ID"];
     if (!pinView) pinView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"DETAILPIN_ID"];
+    pinView.pinColor = MKPinAnnotationColorRed;
     if ([self.hotelArray containsObject:annotation]) {
         pinView.pinColor = MKPinAnnotationColorGreen;
     }
-    if ([self.cornellArray containsObject:annotation]) {
-        pinView.pinColor = MKPinAnnotationColorRed;
-    }
     if (annotation == self.pinAnnot) {
         pinView.pinColor = MKPinAnnotationColorPurple;
+    }
+    if ([self.hosptArray containsObject:annotation]) {
+        pinView.pinColor = MKPinAnnotationColorGreen;
+    }
+    if ([self.hosptArray containsObject:annotation]) {
+        pinView.pinColor = MKPinAnnotationColorGreen;
     }
     
     [pinView setAnimatesDrop:YES];
@@ -137,7 +141,10 @@
         self.appDel.annot = view.annotation;
         [self.appDel sendLocationInfo];
     }
+    if ([self.waypointArray containsObject:view.annotation])
+        wayPointIndex = (int)[self.waypointArray indexOfObject:view.annotation];
     self.locationLabel.text = view.annotation.title;
+    [self.map setCenterCoordinate:self.map.region.center animated:YES];
 }
 
 #pragma mark Button Clicks
@@ -211,6 +218,7 @@
 //supposedly an array of MyAnnotation that should be dropped
 -(void)dropPin:(NSArray*)array{
     [self.map addAnnotations:array];
+    [self.map setCenterCoordinate:self.map.region.center animated:YES];
 }
 
 -(void)fillArray:(NSMutableArray*)arrayToFill WithJsonArray:(NSArray*)array {

@@ -127,6 +127,7 @@
     [self.connectedWatch appMessagesGetIsSupported:^(PBWatch *watch, BOOL isAppMessagesSupported) {
         if (isAppMessagesSupported) {
             NSLog(@"This Pebble supports app message!");
+            [self sendLocationInfo];
         }
         else {
             NSLog(@":( - This Pebble does not support app message!");
