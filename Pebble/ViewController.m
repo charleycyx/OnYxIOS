@@ -87,7 +87,6 @@
         [self.map setRegion:MKCoordinateRegionMakeWithDistance(self.appDel.location.coordinate,1000,1000)];
         centered = true;
     }
-//    self.selfAnnot.coordinate = newLocation.coordinate;
 }
 
 #pragma mark map stuff
@@ -173,6 +172,8 @@
     
     [self clearAnnotations];
     [self queryWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/directions/%f,%f/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude,self.appDel.annot.coordinate.latitude,self.appDel.annot.coordinate.longitude] forArray:self.waypointArray];
+    [self.map selectAnnotation:self.waypointArray.firstObject animated:YES];
+    wayPointIndex = 0;
 }
 
 #pragma helpers
@@ -272,6 +273,22 @@
     [textField resignFirstResponder];
     
     return YES;
+}
+
+-(void)toNextWaypoint {
+    if (wayPointIndex<((int)self.waypointArray.count)-1) {
+        wayPointIndex++;
+        [self.map selectAnnotation:self.waypointArray[wayPointIndex] animated:YES];
+    }
+}
+
+-(void)toPreviousWaypoint {
+    if (wayPointIndex>0) {
+        wayPointIndex--;
+        if (wayPointIndex < self.waypointArray.count)
+            [self.map selectAnnotation:self.waypointArray[wayPointIndex] animated:YES];
+    }
+    
 }
 
 

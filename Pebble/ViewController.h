@@ -15,5 +15,9 @@
 
 -(void)locationUpdatedTo:(CLLocation*)newLocation;
 
+-(void)toNextWaypoint;
+
+-(void)toPreviousWaypoint;
+
 @end
 

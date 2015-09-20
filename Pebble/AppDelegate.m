@@ -102,6 +102,9 @@
         [self.vc locationUpdatedTo:manager.location];
     }
     [self sendLocationInfo];
+    if ([self.location distanceFromLocation:[[CLLocation alloc]initWithLatitude:self.annot.coordinate.latitude longitude:self.annot.coordinate.longitude]] < 20) {
+        [self.vc toNextWaypoint];
+    }
 }
 
 -(void)locationManger:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -128,6 +131,19 @@
         else {
             NSLog(@":( - This Pebble does not support app message!");
         }
+    }];
+    [self.connectedWatch appMessagesAddReceiveUpdateHandler:^BOOL(PBWatch *watch, NSDictionary *update) {
+        
+        if (self.vc && update) {
+            if (update[@11]) {
+                //switch forward
+                [self.vc toNextWaypoint];
+            } else if (update[@12]) {
+                [self.vc toPreviousWaypoint];
+            }
+        }
+        
+        return YES;
     }];
 }
 
