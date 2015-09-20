@@ -103,10 +103,7 @@
         self.pinAnnot =  [[MyAnnotation alloc] initWithCoordinate:[self.map convertPoint:point toCoordinateFromView:self.map]];
         self.pinAnnot.title = @"Custom Pin on the map";
         [self.map addAnnotation:self.pinAnnot];
-
-        //put this onto the appDel annotation
-        self.appDel.annot = self.pinAnnot;
-        [self.appDel sendLocationInfo];
+        
     }
 }
 
@@ -168,13 +165,14 @@
 - (IBAction)searchButtonClicked:(id)sender {
     
     [self clearAnnotations];
+    [self.textField resignFirstResponder];
     [self queryWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/search/%@",[self.textField.text stringByReplacingOccurrencesOfString:@" " withString:@"%20"]] forArray:self.searchArray];
     
 }
 - (IBAction)navigateButtonClicked:(id)sender {
     
     [self clearAnnotations];
-    [self queryWithString:[NSString stringWithFormat:@"http://localhost:6002/gmaps/directions/%f,%f/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude,self.appDel.annot.coordinate.latitude,self.appDel.annot.coordinate.longitude] forArray:self.waypointArray];
+    [self queryWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/directions/%f,%f/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude,self.appDel.annot.coordinate.latitude,self.appDel.annot.coordinate.longitude] forArray:self.waypointArray];
 }
 
 #pragma helpers
