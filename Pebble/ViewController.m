@@ -172,8 +172,6 @@
     
     [self clearAnnotations];
     [self queryWithString:[NSString stringWithFormat:@"http://onyxbackend.mybluemix.net/gmaps/directions/%f,%f/%f,%f",self.appDel.location.coordinate.latitude,self.appDel.location.coordinate.longitude,self.appDel.annot.coordinate.latitude,self.appDel.annot.coordinate.longitude] forArray:self.waypointArray];
-    [self.map selectAnnotation:self.waypointArray.firstObject animated:YES];
-    wayPointIndex = 0;
 }
 
 #pragma helpers
@@ -201,6 +199,10 @@
                                                         NSLog(@"%@",jsonArray);
                                                         [self fillArray:array WithJsonArray:jsonArray];
                                                         [self dropPin:array];
+                                                        if (array == self.waypointArray) {
+                                                            [self.map selectAnnotation:self.waypointArray.firstObject animated:YES];
+                                                            wayPointIndex = 0;
+                                                        }
                                                     }
                                                 }];
     [dataTask resume];
